@@ -1,0 +1,10 @@
+FROM docker.io/library/nginx:latest
+
+# Copia el archivo index.html directamente al directorio de Nginx
+COPY ./index.html /usr/share/nginx/html/
+
+# Exponer el puerto 80 para servir contenido web
+EXPOSE 80
+
+# Mantener Nginx en primer plano
+CMD ["nginx", "-g", "daemon off;"]
